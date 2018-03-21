@@ -1,0 +1,3 @@
+https://github.com/tmux-plugins/tpm ./plugins/tpm
+https://github.com/tmux-plugins/tmux-sensible .plugins/tmux-sensible
+https://github.com/tmux-plugins/tmux-resurrect .plugins/tmux-resurrect
