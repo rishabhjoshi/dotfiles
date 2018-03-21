@@ -1,0 +1,11 @@
+https://github.com/joshdick/onedark.vim.git ./bundle/onedark.vim
+https://github.com/michaeljsmith/vim-indent-object ./bundle/vim-indent-object
+https://github.com/scrooloose/nerdtree.git ./bundle/nerdtree
+https://github.com/octol/vim-cpp-enhanced-highlight.git ./bundle/vim-cpp-enhanced-highlight
+https://github.com/Valloric/YouCompleteMe .bundle/YouCompleteMe
+https://github.com/vim-airline/vim-airline .bundle/vim-airline
+https://github.com/wincent/command-t .bundle/command-t
+https://github.com/airblade/vim-gitgutter .bundle/vim-gitgutter
+https://github.com/lervag/vimtex .bundle/vimtex
+https://github.com/tpope/vim-commentary .bundle/vim-commentary
+https://github.com/majutsushi/tagbar .bundle/tagbar
