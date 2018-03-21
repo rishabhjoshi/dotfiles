@@ -1,0 +1,237 @@
+# Path to your oh-my-zsh installation.
+  export ZSH=/home/rishab/.oh-my-zsh
+  export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="rishabhjoshi"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+# User configuration
+
+# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias gohome='cd /scratchd/home/rishab/'
+
+submit() {
+	cat $1 |xclip -selection clipboard
+}
+
+dwn() {
+       while true;do
+       wget -T 15 -c $1 && break
+       done
+}
+
+#export PATH="/home/rishabh/anaconda2/bin:$PATH"
+export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
+export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
+export PATH="/usr/local/cuda-9.0/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH"
+export PATH="/usr/local/cuda-8.0/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH"
+#export PATH="/scratchd/home/rishab/anaconda2/envs/myenv/python3/bin:$PATH"
+#export PATH="~/anaconda/envs/python3/bin:$PATH"
+
+
+#alias proxylab="sshuttle --disable-ipv6 -r rishabh@172.18.19.51:22 0/0"
+#alias proxylab="sshuttle -r rishabh@172.18.19.51:22 0/0"
+
+# For * no matches found... This will run globbing expressions and wont show message
+setopt +o nomatch
+
+#LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
+if [[ -f ~/.dircolors ]] ; then 
+    eval $(dircolors -b ~/.dircolors) 
+elif [[ -f /etc/DIR_COLORS ]] ; then 
+    eval $(dircolors -b /etc/DIR_COLORS) 
+fi
+
+
+# utf-8 support
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Anaconda
+export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
+
+
+ #TMUX
+#
+# Aliases
+#
+
+alias ta='tmux -2 attach -t'
+alias tad='tmux -2 attach -d -t'
+alias ts='tmux -2 new-session -s'
+alias tl='tmux -2 list-sessions'
+alias tksv='tmux -2 kill-server'
+alias tkss='tmux -2 kill-session -t'
+
+# Only run if tmux is actually installed
+#
+#
+#if which tmux &> /dev/null
+#	then
+#	# Configuration variables
+#	#
+#	# Automatically start tmux
+#	[[ -n "$ZSH_TMUX_AUTOSTART" ]] || ZSH_TMUX_AUTOSTART=false
+#	# Only autostart once. If set to false, tmux will attempt to
+#	# autostart every time your zsh configs are reloaded.
+#	[[ -n "$ZSH_TMUX_AUTOSTART_ONCE" ]] || ZSH_TMUX_AUTOSTART_ONCE=true
+#	# Automatically connect to a previous session if it exists
+#	[[ -n "$ZSH_TMUX_AUTOCONNECT" ]] || ZSH_TMUX_AUTOCONNECT=true
+#	# Automatically close the terminal when tmux exits
+#	[[ -n "$ZSH_TMUX_AUTOQUIT" ]] || ZSH_TMUX_AUTOQUIT=$ZSH_TMUX_AUTOSTART
+#	# Set term to screen or screen-256color based on current terminal support
+#	[[ -n "$ZSH_TMUX_FIXTERM" ]] || ZSH_TMUX_FIXTERM=true
+#	# Set '-CC' option for iTerm2 tmux integration
+#	[[ -n "$ZSH_TMUX_ITERM2" ]] || ZSH_TMUX_ITERM2=false
+#	# The TERM to use for non-256 color terminals.
+#	# Tmux states this should be screen, but you may need to change it on
+#	# systems without the proper terminfo
+#	[[ -n "$ZSH_TMUX_FIXTERM_WITHOUT_256COLOR" ]] || ZSH_TMUX_FIXTERM_WITHOUT_256COLOR="screen"
+#	# The TERM to use for 256 color terminals.
+#	# Tmux states this should be screen-256color, but you may need to change it on
+#	# systems without the proper terminfo
+#	[[ -n "$ZSH_TMUX_FIXTERM_WITH_256COLOR" ]] || ZSH_TMUX_FIXTERM_WITH_256COLOR="screen-256color"
+#
+#
+#	# Get the absolute path to the current directory
+#	local zsh_tmux_plugin_path="$(cd "$(dirname -- "$0")" && pwd)"
+#
+#	# Determine if the terminal supports 256 colors
+#	if [[ `tput colors` == "256" ]]
+#	then
+#		export ZSH_TMUX_TERM=$ZSH_TMUX_FIXTERM_WITH_256COLOR
+#	else
+#		export ZSH_TMUX_TERM=$ZSH_TMUX_FIXTERM_WITHOUT_256COLOR
+#	fi
+#
+#	# Set the correct local config file to use.
+#    if [[ "$ZSH_TMUX_ITERM2" == "false" ]] && [[ -f $HOME/.tmux.conf || -h $HOME/.tmux.conf ]]
+#	then
+#		#use this when they have a ~/.tmux.conf
+#		export _ZSH_TMUX_FIXED_CONFIG="$zsh_tmux_plugin_path/tmux.extra.conf"
+#	else
+#		#use this when they don't have a ~/.tmux.conf
+#		export _ZSH_TMUX_FIXED_CONFIG="$zsh_tmux_plugin_path/tmux.only.conf"
+#	fi
+#
+#	# Wrapper function for tmux.
+#	function _zsh_tmux_plugin_run()
+#	{
+#		# We have other arguments, just run them
+#		if [[ -n "$@" ]]
+#		then
+#			\tmux $@
+#		# Try to connect to an existing session.
+#		elif [[ "$ZSH_TMUX_AUTOCONNECT" == "true" ]]
+#		then
+#			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` attach || \tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG` new-session
+#			[[ "$ZSH_TMUX_AUTOQUIT" == "true" ]] && exit
+#		# Just run tmux, fixing the TERM variable if requested.
+#		else
+#			\tmux `[[ "$ZSH_TMUX_ITERM2" == "true" ]] && echo '-CC '` `[[ "$ZSH_TMUX_FIXTERM" == "true" ]] && echo '-f '$_ZSH_TMUX_FIXED_CONFIG`
+#			[[ "$ZSH_TMUX_AUTOQUIT" == "true" ]] && exit
+#		fi
+#	}
+#
+#	# Use the completions for tmux for our function
+#	compdef _tmux _zsh_tmux_plugin_run
+#
+#	# Alias tmux to our wrapper function.
+#	alias tmux=_zsh_tmux_plugin_run
+#
+#	# Autostart if not already in tmux and enabled.
+#	if [[ ! -n "$TMUX" && "$ZSH_TMUX_AUTOSTART" == "true" ]]
+#	then
+#		# Actually don't autostart if we already did and multiple autostarts are disabled.
+#		if [[ "$ZSH_TMUX_AUTOSTART_ONCE" == "false" || "$ZSH_TMUX_AUTOSTARTED" != "true" ]]
+#		then
+#			export ZSH_TMUX_AUTOSTARTED=true
+#			_zsh_tmux_plugin_run
+#		fi
+#	fi
+#else
+#	print "zsh tmux plugin: tmux not found. Please install tmux before using this plugin."
+#fi
