@@ -10,3 +10,4 @@ https://github.com/lervag/vimtex ./bundle/vimtex
 https://github.com/tpope/vim-commentary ./bundle/vim-commentary
 https://github.com/majutsushi/tagbar ./bundle/tagbar
 https://github.com/vim-python/python-syntax ./bundle/python-syntax
+https://github.com/SirVer/ultisnips ./bundle/ultisnips
