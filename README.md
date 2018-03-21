@@ -1,6 +1,8 @@
 # My Dotfiles
+---
 
-* .vim (contains vimrc)
-* .oh_my_zsh (contains .zshrc)
-* .tmux (contains .tmux.conf)
-* .bashrc
+> This project is heavily influenced from bk2dcrade/dotfiles
+
+### Before Starting
+
+1. Install Tmux
