@@ -35,19 +35,29 @@ cd ..
 echo "Installing vim plugins"
 echo "======================\n\n"
 cd vim
-echo "Installing Pathogen in vim/autoload"
+# echo "Installing Pathogen in vim/autoload"
 if [ ! -d autoload ]; then
     mkdir autoload
     echo "Created vim/autoload"
 fi
-curl -LSso autoload/pathogen.vim https://tpo.pe/pathogen.vim
+if [ ! -d bundle ]; then
+    mkdir bundle 
+    echo "Created vim/bundle"
+fi
+echo "Cloning vundle"
+echo "==============\n"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo "Done!\n\n"
-echo "Cloning vim plugins"
-filename="plugins.txt"
-while read in; do
-	git clone $in
-	echo "\n======================================================\n"
-done < $filename
+# echo "Cloning vim plugins"
+echo "Installing vundle plugins"
+vim +PluginInstall +qall
+# filename="plugins.txt"
+# while read in; do
+# 	git clone $in
+# 	echo "\n======================================================\n"
+# done < $filename
+echo "\nDone!"
+echo "\n=========================\n"
 
 if [ -d ~/.vim ]; then
     mv ~/.vim ~/.vim.bak
