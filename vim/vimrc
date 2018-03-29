@@ -1,4 +1,29 @@
-execute pathogen#infect()
+set nocompatible
+" Helps force plugins to load correctly when it is turned on below
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'joshdick/onedark.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'octol/vim-cpp-enhanced-highlight.git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-python/python-syntax'
+Plugin 'SirVer/ultisnips'
+Plugin 'Tagbar'
+Plugin 'wincent/command-t'
+Plugin 'lervag/vimtex'
+Plugin 'tpope/vim-commentary'
+" Plugin 'vim-syntatic/syntastic'
+
+call vundle#end()
+filetype plugin indent on
+let g:python_highlight_all = 1
+
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 set autoread
@@ -32,8 +57,6 @@ colorscheme onedark
 let g:airline#themes#solarizedlight#constant=1
 
 set backspace=indent,eol,start
-
-autocmd BufNewFile *.html :r ~/.templates/HTML.html
 
 " Syntastic Stuff
 "=======================
