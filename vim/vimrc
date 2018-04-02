@@ -19,6 +19,7 @@ Plugin 'Tagbar'
 Plugin 'wincent/command-t'
 Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-commentary'
+Plugin 'tell-k/vim-autopep8'
 " Plugin 'vim-syntatic/syntastic'
 
 call vundle#end()
@@ -48,6 +49,10 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#whitespace#enabled = 0
 "let g:airline_powerline_fonts=1
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
+
+" <<<<<< AutoPep8 Mapping >>>>>>>
+" ==============================
+autocmd FileType python noremap <buffer> <F7> :call Autopep8()<CR>
 
 " ««««««  Set colorscheme related stuff »»»»»»
 "=============================================
