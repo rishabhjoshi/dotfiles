@@ -114,6 +114,19 @@ endfunction
 
 nnoremap qwer :call BgToggleSol()<cr>
 
+" <<<<<<  SNIPPETS  >>>>>>
+" ========================
+let g:UltiSnipsExpandTrigger="<C-Space>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
+"let g:ultiSnipsSnippetDir="~/.vim/my-snippets/UltiSnips//"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my-snippets/UltiSnips"]
+
+" <<<<<<< Tagbar  >>>>>>>
+" =======================
+nmap <F8> :TagbarToggle<CR>
+
 " ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
 "=============================================================================
 
@@ -238,11 +251,16 @@ set showcmd
 "Display the status line always
 set laststatus=2
 
-"Setting tab to 2 spaces
+" Last Line
+set showmode
+set showcmd
+
+"Setting tab to 4 spaces
 set tabstop=4
-"set expandtab
+set expandtab
 set noexpandtab
 set shiftwidth=4
+set softtabstop=4
 
 "Indentation stuff
 set smarttab
@@ -251,6 +269,7 @@ set smartindent
 
 "Paste mode can be enabled using F2
 set pastetoggle=<F2>
+set copyindent "for pasting autoindentation problem
 
 "Line numbers ought to be there
 set ruler
@@ -263,6 +282,8 @@ set incsearch
 "Highlight search elements
 set hlsearch
 set title
+set ignorecase
+set smartcase
 
 "Colour the 80th column
 set colorcolumn=80
