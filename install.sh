@@ -15,11 +15,11 @@ done
 echo "Installing oh-my-zsh"
 echo "===================="
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-mv oh-my-zsh ~/.oh-my-zsh
+mv "oh-my-zsh" "~/.oh-my-zsh"
 
 echo "Installing zsh theme"
 echo "===================="
-mv zsh/themes/* ~/.oh-my-zsh/themes/
+cp "zsh/themes/*" "~/.oh-my-zsh/themes/"
 
 echo "Installing zsh plugins"
 echo "======================\n\n"
@@ -64,13 +64,13 @@ if [ -d ~/.vim ]; then
     echo "WARN: ~/.vim already exists, backing it up"
     echo "Renamed ~/.vim to ~/.vim.bak"
 fi
-cp -r vim ~/.vim
+cp -r "vim" "~/.vim"
 if [ -d ~/.vimrc ]; then
     mv ~/.vimrc ~/.vimrc.bak
     echo "WARN: ~/.vimrc already exists, backing it up"
     echo "Renamed ~/.vimrc to ~/.vimrc.bak"
 fi
-mv ~/.vim/vimrc ~/.vimrc
+mv "~/.vim/vimrc" "~/.vimrc"
 
 echo "Installing tmux plugins"
 echo "===============\n"
@@ -84,15 +84,15 @@ done < $filename
 cd ..
 
 if [ -d ~/.tmux ]; then
-	mv ~/.tmux ~/.tmux.bak
+	mv "~/.tmux" "~/.tmux.bak"
 	echo "WARN: ~/.tmux already exists, backing it up"
 	echo "Renamed ~/.tmux to ~/.tmux.bak"
 fi
-cp -r tmux ~/.tmux
+cp -r "tmux" "~/.tmux"
 if [ -d ~/.tmux.conf ]; then
-	mv ~/.tmux.conf ~/.tmux.conf.bak
+	mv "~/.tmux.conf" "~/.tmux.conf.bak"
 	echo "WARN: ~/.tmux.conf already exists, backing it up"
 	echo "Renamed ~/.tmux.conf to ~/.tmux.conf.bak"
 fi
-mv ~/.tmux/tmux.conf ~/.tmux.conf
+mv "~/.tmux/tmux.conf" "~/.tmux.conf"
 
