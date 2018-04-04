@@ -214,3 +214,74 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
 endsnippet
+
+snippet argparser "Add argparser" b
+parser = argparse.ArgumentParser(description='${1:}')
+parser.add_argument('-x', default='')
+args = parser.parse_args()
+endsnippet
+
+snippet partition "Get partition for joblib parallel" b
+def partition(lst, n):
+	division = len(lst) / float(n)
+	return [ lst[int(round(division * i)): int(round(division * (i + 1)))] for i in range(n) ]
+
+def getChunks(inp_list, chunk_size):
+	return [inp_list[x:x+chunk_size] for x in range(0, len(inp_list), chunk_size)]
+endsnippet
+
+snippet parallel "Get Joblib parallel" b
+num_procs = ${1:40}
+Parallel(n_jobs = num_procs)(delayed(${2:})(${3:}) for chunk in chunks)
+endsnippet
+
+snippet iterfiles "Iterate over files" b
+for root, dirs, files in os.walk(PATH):
+	for file in files:
+		fname = os.path.join(root, file)
+endsnippet
+
+snippet mongoinsert "insert in Mongo" b
+from pymongo.errors import BulkWriteError
+
+${1:c_dosa} = MongoClient('mongodb://10.24.28.${2:104}:27017/')
+main = ${1:c_dosa}['${3:}']['${4:}']
+
+bulk = main.initialize_unordered_bulk_op()
+count = 0
+if count % 10000 == 0:
+	print ('Completed {}'.format(count))
+	try: bulk.execute()
+	except BulkWriteError as e:
+		exc_type, exc_obj, exc_tb = sys.exc_info()
+		fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+		print('\nException Type : {}\nCause : {}\nfname : {}\nline_no : {}'.format(exc_type, e.args[0], e.details.get('writeErrors', ['None'])[0], fname, exc_tb.tb_lineno))
+	bulk = main.initialize_unordered_bulk_op()
+endsnippet
+
+snippet mongouse "Use mongo" b
+${1:c_dosa} = MongoClient('mongodb://10.24.28.${2:104}:27017/')
+main = ${1:c_dosa}['${3:}']['${4:}']
+endsnippet
+
+snippet progressprint "Progress print" b
+if ${1:i} % 10000 == 0: print('Completed {}, {}'.format(${1:i}, time.strftime("%d_%m_%Y") + '_' + time.strftime("%H:%M:%S")))
+${2:}
+endsnippet
+
+snippet pybegin "Imports of python" b
+import os, sys, pdb, numpy as np, random, argparse, codecs, pickle, time, json
+from pprint import pprint
+from collections import defaultdict as ddict
+from joblib import Parallel, delayed
+from pymongo import MongoClient
+
+${1:}
+endsnippet
+
+snippet trycatch "Puts the exception part of trycatch"
+except Exception as e:
+	exc_type, exc_obj, exc_tb = sys.exc_info()
+	fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+	print('\nException Type: {}, \nCause: {}, \nfname: {}, \nline_no: {}'.format(exc_type, e.args[0], fname, exc_tb.tb_lineno))
+endsnippet
