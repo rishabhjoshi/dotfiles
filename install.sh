@@ -35,6 +35,13 @@ done < $filename
 echo "zsh plugins cloned\n\n"
 cd ..
 
+if [ -d ~/.zshrc ]; then
+    sh -c "mv ~/.zshrc ~/.zshrc.bak"
+    echo "WARN: ~/.zshrc already exists, backing it up"
+    echo "Renamed ~/.zshrc to ~/.zshrc.bak"
+fi
+sh -c "cp -r zsh/zshrc ~/.zshrc"
+
 echo "Installing vim plugins"
 echo "======================\n\n"
 cd vim
