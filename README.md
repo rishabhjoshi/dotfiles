@@ -6,3 +6,4 @@
 ### Before Starting
 
 1. Install Tmux
+2. Install gnustep-gui-runtime
