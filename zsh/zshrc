@@ -88,6 +88,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias gohome='cd /scratchd/home/rishab/'
+alias dn='curl -H "Content-type: application/json" --data "Done" http://10.24.28.211:9999/jobComplete'
 
 submit() {
 	cat $1 |xclip -selection clipboard
@@ -132,6 +133,9 @@ export LANGUAGE=en_US.UTF-8
 
 # Anaconda
 export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
+
+# Start environment
+source activate myenv
 
 
  #TMUX
