@@ -12,4 +12,6 @@ while True:
     if psutil.virtual_memory()[2] > 97:
         subprocess.call("curl -H \"Content-type: application/json\" --data \"Danger\" http://10.24.28.211:9999/jobComplete",
                 shell = True)
-        time.sleep(1)
+        time.sleep(2)
+    else: 
+        time.sleep(60)
