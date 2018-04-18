@@ -28,8 +28,6 @@ f.close()
 
 RAM_THRESH = args.ram
 RAM_REMINDER_TIME = args.ram_time
-DISK_THRESH = args.disk
-DISK_REMINDER_TIME = args.disk_time
 ONEG = 1024*1024*1024
 
 while True:
