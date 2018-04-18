@@ -17,7 +17,7 @@ parser.add_argument('-disk_time',   default= 7200,   type = int, help = 'Time to
 args = parser.parse_args()
 channel = '#general'
 username = 'webhookbot'
-icon_emoji = ':ghost:'
+icon_emoji = ':bangbang:'
 f = open('slack_url_file.txt')
 for line in f:
     slackURL = line
