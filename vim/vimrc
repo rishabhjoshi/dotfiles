@@ -21,6 +21,9 @@ Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-commentary'
 Plugin 'tell-k/vim-autopep8'
 " Plugin 'vim-syntatic/syntastic'
+"Plugin 'ayu-theme/ayu-vim'
+"Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 filetype plugin indent on
@@ -59,8 +62,16 @@ autocmd FileType python noremap <buffer> <F7> :call Autopep8()<CR>
 
 let g:airline_theme='customdark'
 let g:onedark_termcolors=256
-set background=dark
-colorscheme onedark
+"set background=dark
+"colorscheme onedark
+colorscheme onehalfdark
+"set t_8f=[38;2;%lu;%lu;%lum  " Needed in tmux
+"set t_8b=[48;2;%lu;%lu;%lum  " Ditto
+"set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
 let g:airline#themes#solarizedlight#constant=1
 
 set backspace=indent,eol,start
