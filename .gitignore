@@ -1,2 +1,4 @@
 *.swp
 utils/slack_url_file.txt
+tmux/plugins/
+zsh/plugins/
