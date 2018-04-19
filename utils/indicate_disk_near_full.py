@@ -1,4 +1,3 @@
-
 # Author : Rishabh Joshi
 # Insti  : IISc, Bangalore
 
@@ -12,9 +11,8 @@ import requests
 import json
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('-server',      default= 'dosa',             help = 'Server running the script')
-parser.add_argument('-ram',         default= 98,     type = int, help = 'Ram Percentage Threshold')
-parser.add_argument('-ram_time',    default= 600,    type = int, help = 'Time to remind Ram in sec')
+parser.add_argument('-disk',        default= 100,    type = int, help = 'Disk Usage Threshold in GB')
+parser.add_argument('-disk_time',   default= 7200,   type = int, help = 'Time to remind Disk in sec')
 
 args = parser.parse_args()
 channel = '#general'
@@ -26,18 +24,14 @@ for line in f:
 f.close()
 #slackURL = ''
 
-RAM_THRESH = args.ram
-RAM_REMINDER_TIME = args.ram_time
+DISK_THRESH = args.disk
+DISK_REMINDER_TIME = args.disk_time
 ONEG = 1024*1024*1024
 
 while True:
-    if psutil.virtual_memory()[2] >= RAM_THRESH:
-        # subprocess.call("curl -H \"Content-type: application/json\" --data \"{} in danger\" http://10.24.28.211:9999/jobComplete".format(args.server),
-                # shell = True)
-        # time.sleep(2)
-        used = psutil.virtual_memory()[1] / ONEG
-        total = psutil.virtual_memory()[0] / ONEG
-        text = '{}\'s Memory nearly full. {0:.2f}GB of {0:.2f}GB used'.format(args.server, used, total)
+    if psutil.disk_usage('/scratchd/')[2] <= DISK_THRESH * ONEG:
+        used = psutil.disk_usage('/scratchd/')[2]
+        text = 'Scratchd disk nearly full. {0:.2f} GB Remaining'.format(used / 1e9)
         data = {
                 'channel' : channel,
                 'username': username,
@@ -52,7 +46,6 @@ while True:
                 )
                 continue
         else:
-                time.sleep(RAM_REMINDER_TIME)
-
+                time.sleep(DISK_REMINDER_TIME)
     else: 
         time.sleep(60)
