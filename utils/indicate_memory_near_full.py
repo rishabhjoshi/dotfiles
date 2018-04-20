@@ -35,9 +35,9 @@ while True:
         # subprocess.call("curl -H \"Content-type: application/json\" --data \"{} in danger\" http://10.24.28.211:9999/jobComplete".format(args.server),
                 # shell = True)
         # time.sleep(2)
-        used = psutil.virtual_memory()[1] / ONEG
+        available = psutil.virtual_memory()[1] / ONEG
         total = psutil.virtual_memory()[0] / ONEG
-        text = '{}\'s Memory nearly full. {0:.2f}GB of {0:.2f}GB used'.format(args.server, used, total)
+        text = '{}\'s Memory nearly full. {:.2f}GB of {:.2f}GB available'.format(args.server, available, total)
         data = {
                 'channel' : channel,
                 'username': username,
