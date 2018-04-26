@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/rishab/.oh-my-zsh
-  export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
+export ZSH=/home/rishabh/.oh-my-zsh
+export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -135,8 +135,21 @@ export LANGUAGE=en_US.UTF-8
 export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
 
 # Start environment
-source activate myenv
+# source activate myenv
 
+# SSHs
+alias puri='ssh -x rishab@10.24.28.106'
+alias peda='ssh -x rishab@10.24.28.107'
+alias poha='ssh -x rishab@10.24.28.105'
+alias momo='ssh -x rishab@10.24.28.103'
+alias idli='ssh -x rishab@10.24.28.102'
+alias dosa='ssh -x rishab@10.24.28.104'
+alias mpuri='mosh rishab@10.24.28.106'
+alias mpeda='mosh rishab@10.24.28.107'
+alias mpoha='mosh rishab@10.24.28.105'
+alias mmomo='mosh rishab@10.24.28.103'
+alias midli='mosh rishab@10.24.28.102'
+alias mdosa='mosh rishab@10.24.28.104'
 
  #TMUX
 #
