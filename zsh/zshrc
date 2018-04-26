@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/rishabh/.oh-my-zsh
+export ZSH=/home/rishab/.oh-my-zsh
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
 # Set name of the theme to load.
@@ -157,7 +157,7 @@ export LANGUAGE=en_US.UTF-8
 export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
 
 # Start environment
-# source activate myenv
+alias myenv='source deactivate; source activate myenv'
 
 # SSHs
 alias puri='ssh -x rishab@10.24.28.106'
