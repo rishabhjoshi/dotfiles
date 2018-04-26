@@ -89,6 +89,13 @@ alias l='ls -CF'
 
 alias gohome='cd /scratchd/home/rishab/'
 alias dn='curl -H "Content-type: application/json" --data "Done" http://10.24.28.211:9999/jobComplete'
+alias gotoml='source ~/.zshrc; cd /media/rishabh/Windows1/GitHub/washington'
+alias gotogit='source ~/.zshrc; cd /media/rishabh/Windows1/GitHub/'
+alias gotoforces='cd ~/Desktop/codeforces'
+
+alias proxylab='sshuttle --disable-ipv6 -r ayush@172.18.19.71:22 0/0'
+alias sshlab='ssh -L 5001:127.0.0.1:5001 rishabh@172.18.19.51'
+alias youtube='sudo ssh -L 3128:localhost:8888 -i ~/youtube.pem ubuntu@18.217.70.226'
 
 submit() {
 	cat $1 |xclip -selection clipboard
@@ -100,6 +107,21 @@ dwn() {
        done
 }
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
+
+export PATH="/anaconda2/bin:$PATH"
+export PATH="/usr/local/racket/bin:$PATH"
+export PATH="/opt/vidyo/VidyoDesktop:$PATH"
+export PATH="/media/rishabh/Windows1/FDrive/matlab-r2015a/bin:$PATH"
 #export PATH="/home/rishabh/anaconda2/bin:$PATH"
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
@@ -156,12 +178,13 @@ alias mdosa='mosh rishab@10.24.28.104'
 # Aliases
 #
 
-alias ta='tmux -2 attach -t'
-alias tad='tmux -2 attach -d -t'
-alias ts='tmux -2 new-session -s'
-alias tl='tmux -2 list-sessions'
-alias tksv='tmux -2 kill-server'
-alias tkss='tmux -2 kill-session -t'
+alias tmux='tmux -u -2'
+alias ta='tmux -u -2 attach -t'
+alias tad='tmux -u -2 attach -d -t'
+alias ts='tmux -u -2 new-session -s'
+alias tl='tmux -u -2 list-sessions'
+alias tksv='tmux -u -2 kill-server'
+alias tkss='tmux -u -2 kill-session -t'
 
 # Only run if tmux is actually installed
 #
