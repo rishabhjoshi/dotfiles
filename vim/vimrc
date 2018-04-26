@@ -63,11 +63,11 @@ autocmd FileType python noremap <buffer> <F7> :call Autopep8()<CR>
 let g:airline_theme='customdark'
 let g:onedark_termcolors=256
 "set background=dark
-"colorscheme onedark
-colorscheme onehalfdark
-"set t_8f=[38;2;%lu;%lu;%lum  " Needed in tmux
-"set t_8b=[48;2;%lu;%lu;%lum  " Ditto
-"set termguicolors     " enable true colors support
+colorscheme onedark
+"colorscheme onehalfdark
+set t_8f=[38;2;%lu;%lu;%lum  " Needed in tmux
+set t_8b=[48;2;%lu;%lu;%lum  " Ditto
+set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
