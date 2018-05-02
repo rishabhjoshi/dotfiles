@@ -239,3 +239,4 @@ alias tkss='tmux -2 kill-session -t'
 #else
 #	print "zsh tmux plugin: tmux not found. Please install tmux before using this plugin."
 #fi
+unsetopt share_history
