@@ -75,6 +75,7 @@ set termguicolors     " enable true colors support
 let g:airline#themes#solarizedlight#constant=1
 
 set backspace=indent,eol,start
+set mouse=a
 
 " Syntastic Stuff
 "=======================
@@ -271,15 +272,8 @@ set laststatus=2
 set showmode
 set showcmd
 
-"Setting tab to 4 spaces
-set tabstop=4
-set expandtab
-set noexpandtab
-set shiftwidth=4
-set softtabstop=4
-
 "Indentation stuff
-set smarttab
+"set smarttab
 set autoindent
 set smartindent
 
@@ -303,6 +297,13 @@ set smartcase
 
 "Colour the 80th column
 set colorcolumn=80
+
+"Setting tab to 4 spaces
+set tabstop=8
+"set expandtab
+set noexpandtab
+set shiftwidth=8
+set softtabstop=8
 
 "Unmap the arrow keys
 
@@ -335,8 +336,19 @@ autocmd BufNewFile *.cc  :read ~/Templates/cpptemp.cpp
 autocmd BufNewFile *.py  :read ~/Templates/pytemp.py
 
 
-command Wq wq
-command W w
+command! Wq wq
+command! W w
+
+" ==================CALL PYTHON AFTER ==========
+function! SetupPython()
+	" Here, you can have the final say on what is set. So
+	" fixup any settings you don't like.
+	setlocal softtabstop=8
+	setlocal tabstop=8
+	setlocal shiftwidth=8
+	setlocal noexpandtab
+endfunction
+command! -bar SetupPython call SetupPython()
 
 
 " NERDTree
