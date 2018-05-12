@@ -20,7 +20,7 @@ args = parser.parse_args()
 MAX_TEMP = args.thresh
 GPU_REMINDER_TIME = args.gputime
 
-channel = '#general'
+channel = '#alerts'
 username = 'webhookbot'
 icon_emoji = ':bangbang:'
 f = open('slack_url_file.txt')

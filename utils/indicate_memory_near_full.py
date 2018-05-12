@@ -17,7 +17,7 @@ parser.add_argument('-ram',         default= 98,     type = int, help = 'Ram Per
 parser.add_argument('-ram_time',    default= 600,    type = int, help = 'Time to remind Ram in sec')
 
 args = parser.parse_args()
-channel = '#general'
+channel = '#alerts'
 username = 'webhookbot'
 icon_emoji = ':bangbang:'
 f = open('slack_url_file.txt')
