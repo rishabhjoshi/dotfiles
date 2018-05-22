@@ -97,6 +97,8 @@ alias proxylab='sshuttle --disable-ipv6 -r ayush@172.18.19.71:22 0/0'
 alias sshlab='ssh -L 5001:127.0.0.1:5001 rishabh@172.18.19.51'
 alias youtube='sudo ssh -L 3128:localhost:8888 -i ~/youtube.pem ubuntu@18.217.70.226'
 
+alias gitsave='git config credential.helper store'
+
 submit() {
 	cat $1 |xclip -selection clipboard
 }
@@ -105,18 +107,6 @@ dwn() {
        while true;do
        wget -T 15 -c $1 && break
        done
-}
-
-convertPDFtoGrey() {
-	gs \
-	 -sOutputFile=output.pdf \
-	 -sDEVICE=pdfwrite \
-	 -sColorConversionStrategy=Gray \
-	 -dProcessColorModel=/DeviceGray \
-	 -dCompatibilityLevel=1.4 \
-	 -dNOPAUSE \
-	 -dBATCH \
-	 $1
 }
 
 # enable color support of ls and also add handy aliases
