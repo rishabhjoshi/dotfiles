@@ -12,7 +12,7 @@ import json
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('-disk',        default= 100,    type = int, help = 'Disk Usage Threshold in GB')
-parser.add_argument('-disk_time',   default= 7200,   type = int, help = 'Time to remind Disk in sec')
+parser.add_argument('-disk_time',   default= 1800,   type = int, help = 'Time to remind Disk in sec')
 
 args = parser.parse_args()
 channel = '#alerts'
