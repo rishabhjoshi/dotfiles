@@ -14,7 +14,7 @@ done
 
 echo "Installing oh-my-zsh"
 echo "===================="
-curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sh -c "mv oh-my-zsh ~/.oh-my-zsh"
 echo "oh-my-zsh installed\n\n"
 
