@@ -82,7 +82,7 @@ vim +PluginInstall +qall
 echo "\nDone!"
 echo "\nCopying Airline themes\n"
 echo "=========================\n"
-sh -c "cp airline-themes/* ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/"
+sh -c "cp vim/airline-themes/* ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/"
 echo "\nDone!"
 echo "\nInstalling YouCompleteMe\n"
 echo "=========================\n"
