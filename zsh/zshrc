@@ -280,3 +280,4 @@ alias tkss='tmux -u -2 kill-session -t'
 #	print "zsh tmux plugin: tmux not found. Please install tmux before using this plugin."
 #fi
 unsetopt share_history
+export VIRTUAL_ENV_DISABLE_PROMPT=
