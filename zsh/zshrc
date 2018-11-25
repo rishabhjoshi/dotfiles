@@ -103,6 +103,12 @@ submit() {
 	cat $1 |xclip -selection clipboard
 }
 
+
+# use like : env GZIP=-9 tar cvzf data.tar.gz /path/to/folder/
+myzip() {
+	env GZIP=-9 tar cvzf $1 $2
+}
+
 dwn() {
        while true;do
        wget -T 15 -c $1 && break
