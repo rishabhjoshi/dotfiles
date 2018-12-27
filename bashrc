@@ -128,5 +128,7 @@ if [ "$(whoami)" = "rishab" ]; then
     exec zsh
 fi
 
+# [ -t 0 ] && [ -f $HOME/local/bin/zsh ] && exec $HOME/local/bin/zsh -l
+
 # added by Anaconda3 installer
 export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
