@@ -131,4 +131,4 @@ fi
 # [ -t 0 ] && [ -f $HOME/local/bin/zsh ] && exec $HOME/local/bin/zsh -l
 
 # added by Anaconda3 installer
-export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
+#export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
