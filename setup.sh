@@ -32,7 +32,7 @@ tar xzf libevent-1.4.14b-stable.tar.gz
 rm libevent-1.4.14b-stable.tar.gz
 cd libevent-1.4.14b-stable
 ./configure --prefix=$HOME/local
-make
+make -j 8
 make install
 cd ..
 echo "Installed libevent"
@@ -40,7 +40,7 @@ echo "Installed libevent"
 echo "Setting up tmux"
 cd tmux-2.9
 ./configure --prefix=$HOME/local LDFLAGS="-L$HOME/local/lib" CFLAGS="-I$HOME/local/include"
-make
+make -j 8
 make install
 cd ..
 
@@ -53,12 +53,28 @@ rm zsh-5.7.1.tar.xz
 echo "Setting up zsh"
 cd zsh-5.7.1/
 ./configure --prefix=$HOME/local
-make
+make -j 8
 make install
 cd ..
 
 echo "Adding zsh to bashrc"
 echo "[ -f $HOME/local/bin/zsh ] && exec $HOME/local/bin/zsh -l" >> $HOME/.bashrc
+
+echo "Setting up libssl"
+wget https://www.openssl.org/source/openssl-1.1.1d.tar.gz
+tar -xvf openssl-1.1.1d.tar.gz
+rm openssl-1.1.1d.tar.gz
+
+cd openssl-1.1.1d
+./config --prefix=$HOME/local --openssldir=$HOME/local/ssl shared
+make -j 8
+make test
+make install
+#mkdir $HOME/local/ssl/lib
+mkdir lib/
+#cp ./*.{so,so.1.1,a,pc} $HOME/local/ssl/lib/
+cp ./*.{so,so.1.1,a,pc} lib/
+cd ..
 
 echo "Setting up python 3.7"
 wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
@@ -67,8 +83,9 @@ rm Python-3.7.4.tgz
 
 echo "Setting up python3.7.4"
 cd Python-3.7.4
-./configure --prefix=$HOME/local --with-ensurepip=install
-make
+#./configure --prefix=$HOME/local --with-ensurepip=install LDFLAGS="-L$HOME/local/lib" CPPFLAGS="-I$HOME/local/include" --with-ssl-default-suites
+LD_LIBRARY_PATH=$HOME/local/lib ./configure --prefix=$HOME/local --with-openssl=$HOME/tools/openssl-1.1.1d --with-ensurepip=install
+make -j 8
 make install
 cd ..
 
