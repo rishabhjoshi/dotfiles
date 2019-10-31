@@ -20,9 +20,10 @@ Plugin 'wincent/command-t'
 Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-commentary'
 Plugin 'tell-k/vim-autopep8'
-" Plugin 'vim-syntatic/syntastic'
-"Plugin 'ayu-theme/ayu-vim'
-"Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+"Plugin 'vim-syntatic/syntastic'
+Plugin 'scrooloose/syntastic'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
@@ -367,3 +368,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Close Vim when only NERDTree is left                                      
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree    .isTabTree()) | q | endif
 
+
+vnoremap <C-c> :w !pbcopy<CR><CR>
+noremap <C-v> :r !pbpaste<CR><CR>
+
+"vnoremap <C-c> :w !xclip -i -sel c<CR><CR>
+"noremap <C-v> :r !xclip -o -sel -c<CR><CR>
