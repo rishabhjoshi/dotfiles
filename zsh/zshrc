@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/rishab/.oh-my-zsh
+export ZSH=/home/rjoshi2/.oh-my-zsh
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
 # Set name of the theme to load.
@@ -93,6 +93,9 @@ alias gotoml='source ~/.zshrc; cd /media/rishabh/Windows1/GitHub/washington'
 alias gotogit='source ~/.zshrc; cd /media/rishabh/Windows1/GitHub/'
 alias gotoforces='cd ~/Desktop/codeforces'
 
+alias negotiation='cd /projects/tir1/users/rjoshi2/negotiation'
+alias corenlp='cd /projects/tir3/users/rjoshi2/corenlp/stanford-corenlp-full-2018-10-05'
+
 alias proxylab='sshuttle --disable-ipv6 -r ayush@172.18.19.71:22 0/0'
 alias sshlab='ssh -L 5001:127.0.0.1:5001 rishabh@172.18.19.51'
 alias youtube='sudo ssh -L 3128:localhost:8888 -i ~/youtube.pem ubuntu@18.217.70.226'
@@ -137,8 +140,17 @@ export PATH="/usr/local/cuda-9.0/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH"
 export PATH="/usr/local/cuda-8.0/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/rjoshi2/tools/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/rjoshi2/.local/lib:$LD_LIBRARY_PATH"
 #export PATH="/scratchd/home/rishab/anaconda2/envs/myenv/python3/bin:$PATH"
+#/home/rjoshi2/envs/myenv/
 #export PATH="~/anaconda/envs/python3/bin:$PATH"
+#export PATH=$HOME/tools/Python-3.7.4/:$PATH
+export PATH=$HOME/.local/bin/:$PATH
+export PATH=$HOME/tools/:$PATH
+
+# Mongodb
+export PATH=/projects/tir4/users/rjoshi2/mongo/mongodb-linux-x86_64-rhel70-4.2.1/bin/:$PATH
 
 
 #alias proxylab="sshuttle --disable-ipv6 -r rishabh@172.18.19.51:22 0/0"
@@ -165,7 +177,8 @@ export LANGUAGE=en_US.UTF-8
 export PATH="/scratchd/home/rishab/anaconda3/bin:$PATH"
 
 # Start environment
-alias myenv='source deactivate; source activate myenv'
+#alias myenv='source deactivate; source activate myenv'
+alias myenv='source /home/rjoshi2/envs/myenv/bin/activate'
 
 # SSHs
 alias puri='ssh -x rishab@10.24.28.106'
@@ -188,7 +201,7 @@ alias gpunv='watch -cn 0.5 gpustat -p --color'
 # Aliases
 #
 
-#alias tmux='tmux -u -2'
+alias tmux='/home/rjoshi2/.local/bin/tmux'
 alias ta='tmux -u -2 attach -t'
 alias tad='tmux -u -2 attach -d -t'
 alias ts='tmux -u -2 new-session -s'
