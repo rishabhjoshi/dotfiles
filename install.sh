@@ -42,6 +42,13 @@ if [ -d ~/.zshrc ]; then
 fi
 sh -c "cp -r zsh/zshrc ~/.zshrc"
 
+if [ -d ~/.bashrc]; then
+    sh -c "mv ~/.bashrc ~/.bashrc.bak"
+    echo "WARN: ~/.bashrc already exists, backing it up"
+    echo "Renamed ~/.bashrc to ~/.bashrc.bak"
+fi
+sh -c "cp -r bashrc ~/.bashrc"
+
 echo "Installing vim plugins"
 echo "======================\n\n"
 cd vim
