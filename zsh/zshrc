@@ -114,7 +114,7 @@ myzip() {
 
 dwn() {
        while true;do
-       wget -T 15 -c $1 && break
+       wget -r -T 15 -c $1 && break
        done
 }
 

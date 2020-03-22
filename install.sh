@@ -126,3 +126,12 @@ if [ -d ~/.tmux.conf ]; then
 fi
 sh -c "mv ~/.tmux/tmux.conf ~/.tmux.conf"
 
+
+echo "Installing Templates"
+echo "===================="
+if [ -d ~/Templates ]; then
+	sh -c "mv ~/Templates ~/Templates_bak"
+	echo "WARN: ~/Templates already exists, backing it up"
+	echo "Renamed ~/Templates to ~/Templates_bak"
+fi
+sh -c "cp -r Templates ~/Templates"
