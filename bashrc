@@ -68,8 +68,12 @@ fi
 export PATH=$HOME/tools/:$PATH
 export PATH=$HOME/.local/bin/:$PATH
 
-export PATH="/usr/local/cuda-9.0/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH"
+export PATH="/usr/local/cuda-10.0/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
+export PATH="/opt/cuda/10.0/bin:$PATH"
+export LD_LIBRARY_PATH="/opt/cuda/10.0/lib64:$LD_LIBRARY_PATH"
+# export PATH="/opt/cuda/9.1/bin:$PATH"
+# export LD_LIBRARY_PATH="/opt/cuda/9.1/lib64:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/rjoshi2/tools/lib:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/home/rjoshi2/.local/lib:$LD_LIBRARY_PATH"
 
@@ -81,6 +85,9 @@ export COBOT_HOME="/projects/tir1/users/rjoshi2/alexa/cobot_base"; export PATH=$
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias work='cd /projects/tir1/users/rjoshi2/'
 alias corenlp='cd /projects/tir3/users/rjoshi2/corenlp/stanford-corenlp-full-2018-10-05'
@@ -102,6 +109,8 @@ alias tl='tmux -u -2 list-sessions'
 
 alias myenv='source /home/rjoshi2/envs/myenv/bin/activate'
 alias rasaenv='source /home/rjoshi2/envs/rasa/bin/activate'
+alias torch14cu100='source /home/rjoshi2/envs/torch14cu100/bin/activate'
+alias r2cenv='source /projects/tir5/users/rjoshi2/envs/r2c/bin/activate && export PYTHONPATH=/projects/tir5/users/rjoshi2/courses/ethics/biases-in-vcr/r2c'
 
 
 #export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u \[\033[01;93m\]: \[\033[01;31m\]\w \[\033[01;93m\]: \[\033[01;96m\]\D{%d-%m-%Y %A} \@\n\[\033[01;93m\]\$ '
@@ -151,5 +160,6 @@ git_branch() {
 	gb | sed 's/()//'
 }
 
-PS1=' \e[00;0m\e[00;32m\u@\h \e[00;34m\w \e[00;93m(\D{%d/%m} \t) \n \e[32m$(git_branch)\e[00;31m➞ \e[0m '
+#PS1=' \e[00;0m\e[00;32m\u@\h \e[00;34m\w \e[00;93m(\D{%d/%m} \t) \n \e[32m$(git_branch)\e[00;31m➞ \e[0m '
+PS1=' \[\e[00;0m\]\[\e[00;32m\]\u@\h \[\e[00;34m\]\w \[\e[00;93m\](\D{%d/%m} \t) \n \[\e[32m\]$(git_branch)\[\e[00;31m\]➞ \[\e[0m\] '
 #PS2=' \[\033[00;31m\]-> \e[0m \$'
