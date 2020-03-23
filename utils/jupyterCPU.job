@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=jupyterCPU
+#SBATCH --nodes=1
+#SBATCH --mem=32GB
+#SBATCH --time=0
+
+# Load necessary modules
+
+# folder to run jupyer from
+#cd /projects/tir5/users/rjoshi2/
+cd $1
+
+port=$3
+
+# Forward the picked port to the cluster on the same port. Here log-x is set to be the tir login mode.
+/usr/bin/ssh -N -f -R $port:localhost:$port tir
+#/usr/bin/ssh -N -f -R $port:localhost:$port log-1
+
+# Start notebook
+source $2
+jupyter notebook --no-browser --port $port
