@@ -10,5 +10,5 @@
 
 
 # Random
-Use this in console to speed up fb videos.
+Use this in console to speed up fb or vimeo videos.
 > document.querySelector('video').playbackRate = 1.5; 
