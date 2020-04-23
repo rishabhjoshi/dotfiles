@@ -383,8 +383,15 @@ function! Pep8Tabs()
 	setlocal expandtab
 endfunction
 
+" If you want to highlight all non ascii in vim
+function! HighlightNonAsciiCmd()
+	exe "normal! /[^\\d0-\\d127]\<CR>"
+	set hls
+	let @/='[^\d0-\d127]'
+endfunction
+command! HighlightNonAscii call HighlightNonAsciiCmd()
 
-" NERDTree
+" NERDTreea
 " 
 " Start Automatically
 " autocmd vimenter * NERDTree
